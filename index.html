@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AsSystem</title>
     <script src="https://kit.fontawesome.com/7165054242.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap');
@@ -16,7 +17,9 @@
             padding: 0px;
             margin: 0px;
             box-sizing: 0;
-            background-color: #000;
+            background-color: #000000;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
         body {
@@ -363,28 +366,15 @@
 
         /* ================================== TRABAJOS ================================= */
 
-        .trabajos {
-            max-width: 1300px;
-            display: flex;
-            justify-content: center;
-            position: relative;
+        .work {
+            padding-bottom: 80px;
             overflow: hidden;
-            margin: 0 auto;
-            background: transparent;
-            align-items: center;
-            margin-top: 100px;
-
-        }
-
-        .trabajos-container {
+            position: relative;
             display: flex;
-            justify-content: center;
-            height: 1100px;
-            width: 1200px;
-            background: transparent;
+            padding-top: 80px;
         }
 
-        .tittle {
+        .tittlee {
             position: absolute;
             font-family: 'Expletus Sans';
             font-weight: 400;
@@ -392,76 +382,126 @@
             color: #fff;
             top: 50px;
             text-align: center;
+            justify-content: center;
+            margin-left: 45%;
+            z-index: 1;
+
         }
 
-        .tittle:hover {
+        .tittlee:hover {
             color: #ffa560;
             transition: .8s;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 30px;
-            margin-top: 150px;
-            margin-bottom: 20px;
+
+
+        .micro-slider {
+            height: 480px;
+            /* margin: 10px 0; */
+            position: relative;
+            width: 100%;
         }
 
-        .grid-item {
-            background-color: #ccc;
-            padding: 20px;
-            width: 480px;
-            border-radius: 50px;
+        .micro-slider.fullwidth {
+            height: 480px;
+            /* margin: 64px 0; */
+        }
+
+        .micro-slider.fullwidth .slider-item {
+            height: 480px;
+            line-height: 480px;
+            width: 100%;
+        }
+
+        .slider-wrapper {
+            overflow: hidden;
+            position: relative;
+            transform-style: preserve-3d;
+            transform-origin: 0 50%;
+        }
+
+        .slider-item {
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+            color: #fff;
+            display: none;
+            height: 320px;
+            line-height: 320px;
+            left: 0;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 320px;
+            cursor: pointer;
+        }
+
+        /*
+.slider-item:not(.active) {cursor: pointer;}
+*/
+        .indicators {
+            bottom: 0px;
+            left: 50%;
+            list-style-type: none;
+            margin: 0 0 0 -77px;
+            padding: 0;
+            position: absolute;
+        }
+
+        .indicators li {
+            color: #fff;
+            float: left;
+            height: 16px;
+            margin-right: 8px;
+            text-align: center;
+            width: 16px;
+        }
+
+        .indicators li:last-child {
+            margin: 0;
+        }
+
+        .indicators a {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e6e9ec;
+            color: #fff;
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+        }
+
+        .indicators .active a {
+            background: #436f9c;
+        }
+
+        .s1 {
+            background-image: url("img/1.png");
 
         }
 
-        .one {
-            background-color: #ccc;
-            padding: 20px;
-            text-align: center;
-            font-size: 50px;
-            font-family: "expletus sans";
-            font-weight: 600;
-            text-align: center;
-            padding-top: 180px;
+        .s2 {
+            background-image: url("img/2.png");
         }
 
-        .two {
-            background-color: #ccc;
-            padding: 20px;
-            text-align: center;
-            font-size: 50px;
-            font-family: "expletus sans";
-            font-weight: 600;
-            text-align: center;
-            padding-top: 180px;
-
+        .s3 {
+            background-image: url("img/3.png");
         }
 
-        .three {
-            background-color: #ccc;
-            padding: 20px;
-            text-align: center;
-            font-size: 50px;
-            font-family: "expletus sans";
-            font-weight: 600;
-            text-align: center;
-            padding-top: 180px;
-
+        .s4 {
+            background-image: url("img/4.png");
         }
 
-        .four {
-            background-color: #ccc;
-            padding: 20px;
-            text-align: center;
-            font-size: 50px;
-            font-family: "expletus sans";
-            font-weight: 600;
-            text-align: center;
-            padding-top: 180px;
-
+        .s5 {
+            background-image: url("img/5.png");
         }
+
+        .s6 {
+            background-image: url("img/6.png");
+        }
+
+        
+
+
 
         /* =========================== TEAM =========================================*/
         .team {
@@ -1173,7 +1213,8 @@
             transform: scale(1.3);
             box-shadow: 0px 25px 5px 0.3px rgb(255, 255, 255);
         }
-        .fa-tiktok{
+
+        .fa-tiktok {
             transition: transform 0.3s ease-in-out;
         }
 
@@ -1183,24 +1224,25 @@
             box-shadow: -2px 28px 5px 0.3px rgb(255, 255, 255);
         }
 
-        .fa-facebook{
+        .fa-facebook {
             transition: transform 0.3s ease-in-out;
         }
-        .fa-facebook:hover{
+
+        .fa-facebook:hover {
             color: #0080FF;
             transform: scale(1.3);
             box-shadow: -2px 28px 5px 0.3px rgb(255, 255, 255);
         }
 
-        .fa-whatsapp{
+        .fa-whatsapp {
             transition: transform 0.3s ease-in-out;
         }
-        .fa-whatsapp:hover{
+
+        .fa-whatsapp:hover {
             color: #25D366;
             transform: scale(1.3);
             box-shadow: -2px 28px 5px 0.3px rgb(255, 255, 255);
         }
-
     </style>
 
 </head>
@@ -1230,7 +1272,7 @@
                     GRÁFICO.</h4>
                 <a href="#acerca" class="start">START</a>
 
-                <img class="cubo" src="img/elemento.png" >
+                <img class="cubo" src="img/elemento.png">
             </div>
         </section>
 
@@ -1238,7 +1280,7 @@
         <section class="acerca" id="acerca">
             <div class="acerca-container">
                 <div class="image">
-                    <img class="niño-acerca" src="img/niño.png" >
+                    <img class="niño-acerca" src="img/niño.png">
                 </div>
                 <div class="contenido">
                     <h2 class="contenido-title">¿Quiénes somos?</h2>
@@ -1255,18 +1297,17 @@
         </section>
 
         <!-- ====================================== TRABAJOS ==================================================== -->
-        <section class="trabajos">
-            <div class="trabajos-container">
-                <h1 class="tittle">
-                    WORKS
-                </h1>
-
-                <div class="grid-container">
-                    <div class="grid-item one">PROXIMAMENTE</div>
-                    <div class="grid-item two">PROXIMAMENTE</div>
-                    <div class="grid-item three">PROXIMAMENTE</div>
-                    <div class="grid-item four">PROXIMAMENTE</div>
-                </div>
+        <section class="work">
+            <h1 class="tittlee">
+                WORKS
+            </h1>
+            <div class="micro-slider">
+                <div class="slider-item s1" data-href="https://kevinmo05.github.io/Diego/main.html" data-target="_blank"></div>
+                <div class="slider-item s2" data-href="#" data-target="_blank"></div>
+                <div class="slider-item s3" data-href="#" data-target="_blank"></div>
+                <div class="slider-item s4" data-href="#" data-target="_blank"></div>
+                <div class="slider-item s5" data-href="#" data-target="_blank"></div>
+                <div class="slider-item s6" data-href="https://kevinmo05.github.io/Calaminas_Impermeables/" data-target="_blank"></div>
             </div>
         </section>
 
@@ -1364,7 +1405,8 @@
             <div class="footer-container">
 
                 <i class="fa-solid fa-envelope fa-2xl"></i>
-                <i class="fa-brands fa-instagram fa-2xl"></i>
+                <i class="fa-brands fa-facebook fa-xl"></i>
+                <i class="fa-brands fa-whatsapp fa-xl"></i>
                 <i class="fa-brands fa-tiktok fa-xl"></i>
                 <i class="fa-brands fa-facebook fa-xl"></i>
                 <i class="fa-brands fa-whatsapp fa-xl"></i>
@@ -1374,6 +1416,9 @@
 
     </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/micro-slider@1.0.9/dist/micro-slider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
 </body>
 
 </html>
